@@ -1,0 +1,15 @@
+.checkbox-round {
+  @apply h-[1.3rem] min-h-[1.3rem] w-[1.3rem] min-w-[1.3rem] cursor-pointer appearance-none rounded-[50%] border-2 border-solid border-indigo-300 align-middle outline-none;
+}
+
+.background-setting {
+  @apply bg-cover bg-center bg-no-repeat;
+}
+
+.tag-color {
+  @apply text-blue-800 dark:bg-blue-900 dark:text-blue-300;
+}
+
+.text-overflow {
+  @apply overflow-hidden text-ellipsis whitespace-nowrap;
+}

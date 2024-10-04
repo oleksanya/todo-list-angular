@@ -1,0 +1,46 @@
+<div class="m-h-[5.5rem] mb-1 ml-2 mr-2 flex justify-between border-2 p-4">
+  <div class="h-full w-[90%]">
+    <div
+      class="relative flex h-[1.25rem] w-full items-center space-x-2 sm:w-auto"
+    >
+      <input
+        id="checkbox-round"
+        type="checkbox"
+        name="taskStatus"
+        class="checkbox-round z-10 bg-transparent"
+        (click)="isDone()"
+      />
+      @if (checked) {
+        <span
+          class="background-setting absolute bottom-[0.33rem] left-[-0.188rem] h-[0.65rem] w-[0.65rem] bg-checkmark-icon"
+        ></span>
+      }
+
+      <div class="h-full w-full">
+        <p
+          [ngClass]="{
+            'text-gray-500 line-through': checked,
+            'text-black': !checked,
+          }"
+          class="text-overflow max-w-[90%]"
+        >
+          {{ task()?.taskContent }}
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-2 w-full">
+      <span
+        class="tag-color me-2 rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium"
+        >{{ task()?.type }}</span
+      >
+    </div>
+  </div>
+
+  <div class="flex items-center justify-end">
+    <span
+      (click)="deleteTask()"
+      class="background-setting mr-3 h-5 w-5 bg-delete-icon text-right text-slate-800"
+    ></span>
+  </div>
+</div>
