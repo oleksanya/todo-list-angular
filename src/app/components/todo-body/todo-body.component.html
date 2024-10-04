@@ -1,0 +1,12 @@
+<div
+  class="flex h-full min-w-full flex-col justify-between rounded bg-slate-50 p-5"
+>
+  <app-todo-list
+    [tasks]="tasks"
+    (taskStatus)="updateTaskStatus($event)"
+    (taskToDelete)="deleteTask($event)"
+  >
+  </app-todo-list>
+
+  <app-create-todo (newTask)="addTaskContent($event)"></app-create-todo>
+</div>
