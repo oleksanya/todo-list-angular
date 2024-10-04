@@ -1,7 +1,7 @@
 <div class="relative">
   <button
     (click)="toggleSidebar()"
-    class="sm:hidden fixed top-4 left-4 p-2 rounded-full bg-blue-500 text-white"
+    class="fixed left-1 top-6 rounded-full bg-blue-500 p-2 text-white sm:hidden"
   >
     +
   </button>
@@ -9,26 +9,24 @@
   <div
     [ngClass]="{
       'translate-x-0': sidebarVisible,
-      '-translate-x-full': !sidebarVisible
+      '-translate-x-full': !sidebarVisible,
     }"
-    class="fixed top-0 left-0 h-full w-64 bg-slate-50 transition-transform transform sm:translate-x-0 z-20"
+    class="fixed left-0 top-0 z-20 h-full w-64 transform bg-slate-50 transition-transform sm:translate-x-0"
   >
     <button
       (click)="toggleSidebar()"
-      class="sm:hidden p-2 rounded-full bg-red-500 text-white m-4"
+      class="m-4 mt-4 rounded-full bg-red-500 p-2 text-white sm:hidden"
     >
       X
     </button>
 
-    <div class="p-4">
-      Sidebar content here
-    </div>
+    <div class="p-4">Sidebar content here</div>
   </div>
 
-  @if(sidebarVisible) {
+  @if (sidebarVisible) {
     <div
-    (click)="toggleSidebar()"
-    class="fixed inset-0 bg-black bg-opacity-50"
+      (click)="toggleSidebar()"
+      class="fixed inset-0 bg-black bg-opacity-50"
     ></div>
   }
 </div>
