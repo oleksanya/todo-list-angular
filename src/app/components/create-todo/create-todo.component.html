@@ -1,0 +1,15 @@
+<div class="mb-10 flex justify-between">
+  <input
+    type="text"
+    id="task-input"
+    [(ngModel)]="taskInput"
+    class="input-primary mb-2 block w-[90%] min-w-64 p-4"
+  />
+
+  <button
+    class="rounded border border-blue-700 bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+    (click)="createTask()"
+  >
+    Create
+  </button>
+</div>
