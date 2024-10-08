@@ -1,20 +1,17 @@
 import {
   Component,
   input,
-  OnChanges,
-  OnInit,
   output,
-  SimpleChange,
-  SimpleChanges,
 } from '@angular/core';
 import { TodoListItemComponent } from '../todo-list-item/todo-list-item.component';
 import { Task } from '../../interfaces/task';
 import { updateTaskStatus } from '../../interfaces/updateTaskStatus.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-todo-list',
   standalone: true,
-  imports: [TodoListItemComponent],
+  imports: [TodoListItemComponent, CommonModule],
   templateUrl: './todo-list.component.html',
   styleUrl: './todo-list.component.css',
 })
@@ -22,6 +19,8 @@ export class TodoListComponent {
   tasks = input<Task[]>();
   taskStatus = output<updateTaskStatus>();
   taskToDelete = output<string>();
+
+  currentDate: number = Date.now();
 
   handleTaskStatus(taskStatus: updateTaskStatus) {
     console.log(taskStatus);

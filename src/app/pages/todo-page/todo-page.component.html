@@ -1,9 +1,15 @@
 <app-header></app-header>
 
 <section
-  class="h-screen grid-cols-[30%_70%] justify-evenly gap-4 overflow-hidden bg-slate-500 md:grid"
->
-  <app-sidebar> </app-sidebar>
+  class="
+  h-screen
 
-  <app-todo-body></app-todo-body>
+  flex 
+  lg:justify-evenly
+  lg:overflow-hidden
+  bg-slate-500"
+>
+  <app-sidebar class="flex md:basis-1/4"> </app-sidebar>
+
+  <app-todo-body class="sm:w-full lg:basis-3/4 md:w-full"></app-todo-body>
 </section>
