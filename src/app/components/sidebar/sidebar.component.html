@@ -1,7 +1,7 @@
-<div class="relative">
+<!-- <div class="relative">
   <button
     (click)="toggleSidebar()"
-    class="fixed left-1 top-6 rounded-full bg-blue-500 p-2 text-white sm:hidden"
+    class="fixed left-1 top-6 rounded-full bg-blue-500 p-2 text-white lg:hidden"
   >
     +
   </button>
@@ -11,7 +11,7 @@
       'translate-x-0': sidebarVisible,
       '-translate-x-full': !sidebarVisible,
     }"
-    class="fixed left-0 top-0 z-20 h-full w-64 transform bg-slate-50 transition-transform sm:translate-x-0"
+    class="z-20 h-full max-lg:hidden transform bg-slate-50 transition-transform sm:translate-x-0"
   >
     <button
       (click)="toggleSidebar()"
@@ -20,7 +20,7 @@
       X
     </button>
 
-    <div class="p-4">Sidebar content here</div>
+    <div class="p-4">hello</div>
   </div>
 
   @if (sidebarVisible) {
@@ -29,4 +29,57 @@
       class="fixed inset-0 bg-black bg-opacity-50"
     ></div>
   }
+</div> -->
+
+
+<div class="relative z-30">
+  <button (click)="toggleSidebar()" class="fixed left-4 text-2xl text-gray-700 md:hidden">
+    ☰
+  </button>
+
+  <button (click)="toggleSidebar()" [ngClass]="{
+    'hidden': !sidebarVisible
+  }" class="fixed left-4 text-red-600 text-2xl md:hidden z-10">
+    X
+  </button>
+
+  <div
+    [ngClass]="{
+      'translate-x-0': sidebarVisible,
+      '-translate-x-full': !sidebarVisible
+    }"
+    class="fixed top-0 left-0 h-[calc(100vh-2rem)] w-full max-w-[20rem] transition-transform duration-300 ease-in-out md:translate-x-0 md:relative md:flex md:w-auto md:max-w-full"
+  >
+    <div class="flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 h-full w-full p-4 shadow-xl shadow-blue-gray-900/5">
+      <div class="mb-2 p-4">
+        <h5 class="block antialiased tracking-normal font-sans text-xl font-semibold leading-snug text-gray-900">
+          Sidebar comp
+        </h5>
+      </div>
+      <div class="flex flex-col gap-1 min-w-[240px] p-2 font-sans text-base font-normal text-gray-700">
+        <div
+          role="button"
+          tabindex="0"
+          class="flex items-center w-full p-3 rounded-lg text-start leading-tight transition-all hover:bg-blue-50 hover:bg-opacity-80 focus:bg-blue-50 focus:bg-opacity-80 active:bg-gray-50 active:bg-opacity-80 hover:text-blue-900 focus:text-blue-900 active:text-blue-900 outline-none"
+        >
+          <div class="grid place-items-center mr-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+              class="h-5 w-5"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M2.25 2.25a.75.75 0 000 1.5H3v10.5a3 3 0 003 3h1.21l-1.172 3.513a.75.75 0 001.424.474l.329-.987h8.418l.33.987a.75.75 0 001.422-.474l-1.17-3.513H18a3 3 0 003-3V3.75h.75a.75.75 0 000-1.5H2.25zm6.04 16.5l.5-1.5h6.42l.5 1.5H8.29zm7.46-12a.75.75 0 00-1.5 0v6a.75.75 0 001.5 0v-6zm-3 2.25a.75.75 0 00-1.5 0v3.75a.75.75 0 001.5 0V9zm-3 2.25a.75.75 0 00-1.5 0v1.5a.75.75 0 001.5 0v-1.5z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </div>
+          Blocks
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
