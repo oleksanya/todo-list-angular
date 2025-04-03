@@ -28,7 +28,7 @@ export class TodoListComponent {
     this.taskStatus.emit(taskStatus);
   }
 
-  handleTaskToDelete(tastId: string) {
-    this.taskToDelete.emit(tastId);
+  handleTaskToDelete(taskId: string) {
+    this.taskToDelete.emit(taskId);
   }
 }
